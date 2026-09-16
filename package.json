@@ -1,0 +1,68 @@
+{
+  "name": "dbvis-param-bridge",
+  "displayName": "dbVisualizer Parameter Bridge",
+  "description": "Converts custom @param comment blocks in SQL files to dbVisualizer's parameter syntax (${var||value||type||options}$) and back again.",
+  "version": "0.1.0",
+  "publisher": "stephan-hradek",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stephan-hradek/dbvis-param-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stephan-hradek/dbvis-param-bridge/issues"
+  },
+  "homepage": "https://github.com/stephan-hradek/dbvis-param-bridge#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "sql",
+    "dbvisualizer",
+    "parameters",
+    "placeholders"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dbvisParamBridge.copyAsDbVisualizer",
+        "title": "dbVis Param Bridge: Copy as dbVisualizer Syntax (Clipboard)"
+      },
+      {
+        "command": "dbvisParamBridge.pasteFromDbVisualizer",
+        "title": "dbVis Param Bridge: Write Back from Clipboard (dbVisualizer)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "dbvisParamBridge.copyAsDbVisualizer",
+          "when": "editorHasSelection",
+          "group": "9_dbvisParamBridge@1"
+        },
+        {
+          "command": "dbvisParamBridge.pasteFromDbVisualizer",
+          "when": "editorHasSelection",
+          "group": "9_dbvisParamBridge@2"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "test:core": "node ./out/test/core.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.5"
+  }
+}
