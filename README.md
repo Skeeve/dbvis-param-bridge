@@ -12,6 +12,21 @@ without translating the syntax by hand.
 > Built by [Claude](https://claude.com) (Anthropic's AI assistant), based on
 > a syntax proposal by the extension's author.
 
+## Motivation
+
+I use [dbVisualizer](https://www.dbvis.com) a lot. I frequently develop and
+experiment with new queries and use dbVis' variable syntax to name the
+placeholders and fill them in interactively while testing.
+The downside is that I always have to replace dbVis' variables with the
+placeholders my DB driver expects.
+Mostly this is `$<n>` in PostgreSQL, but it could just as well be any other
+uniquely identifiable placeholder supported by the driver, like `:name` —
+but not `?`.
+I proposed a new `@param` meta command to the dbVis developers, but it seems
+there wasn't enough demand for it.
+So I asked [Claude](https://claude.com) for help, and within half an hour I
+had this working VS Code extension.
+
 ## Custom syntax
 
 Written directly above the query, inside a comment (so the compiler/driver
