@@ -3,17 +3,17 @@
   "displayName": "dbVisualizer Parameter Bridge",
   "description": "Converts custom @param comment blocks in SQL files to dbVisualizer's parameter syntax (${var||value||type||options}$) and back again.",
   "version": "0.1.0",
-  "publisher": "@Skeeve",
+  "publisher": "Skeeve",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/@Skeeve/dbvis-param-bridge.git"
+    "url": "https://github.com/Skeeve/dbvis-param-bridge.git"
   },
   "bugs": {
-    "url": "https://github.com/@Skeeve/dbvis-param-bridge/issues"
+    "url": "https://github.com/Skeeve/dbvis-param-bridge/issues"
   },
-  "homepage": "https://github.com/@Skeeve/dbvis-param-bridge#readme",
+  "homepage": "https://github.com/Skeeve/dbvis-param-bridge#readme",
   "engines": {
     "vscode": "^1.85.0"
   },
